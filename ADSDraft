@@ -1,0 +1,118 @@
+import random
+
+# Introduction
+print("Welcome to Athletic Director Simulator 3000")
+print("Brought to you by Extra Points, a pretty decent college sports newsletter.")
+print(" ")
+
+print("In this game, you are the AD of a mid-major university.")
+print("Your goal is to raise money, stay out of NCAA jail, and try to improve your department as best you can.")
+
+# Define variables for scoring and budget
+player_score = 0
+department_budget = 1000000
+
+# Main game loop
+while True:
+    # Display scores
+    print("your current score is")
+    print(player_score)
+    print("And your currenet departmenet budget is")
+    print(department_budget)
+    # Present player with options
+    print("What would you like to do next?")
+    print("1. Hire a new head coach for the football team")
+    print("2. Increase funding for the women's soccer team")
+    print("3. Build a new athletic facility")
+    print("4. Call donors to fundraise")
+    print("5. Buy an institutional subscription to Extra Points")
+    print("6. Set up an NIL collective")
+    print("7. Enjoy a tasty cheeseburger.")
+    print("8. Call your assistant football coach to see if his pet monkey bit any children")
+    
+    # Get player's choice
+    choice = input("Enter your choice (1-8): ")
+
+    # Take action based on player's choice
+    if choice == "1":
+        print("You've decided to hire a new head coach for the football team.")
+        print("How will you decide who to hire?")
+        print("1. Hire a young, up and coming, offensive-minded assistant")
+        print("2. Hire the safest, most-experienced re-tread you can find.")
+        print("3. Hire whoever my biggest booster says I should hire.")
+        print("4. Hire whoever my search firm says I should hire.")
+        print("5. Hire Houston Nutt.")
+        
+        football_choice = input("Enter your choice (1-5): ")
+        
+        if football_choice == "1":
+            fb_success_chance = random.randint(1, 100)
+            if fb_success_chance <= 60:
+                print("The new coach leads the team to a successful first season! Nobody is mad at you!")
+                player_score = player_score + 100
+                department_budget = 1000000 + 1000000
+            
+            else:
+                print("The new coach struggles in their first season and everybody is mad online.")
+                player_score = player_score - 100
+                department_budget = 1000000 - 500000
+                
+        if football_choice == "2":
+            fb_success_chance = random.randint(1, 100)
+            if fb_success_chance <= 50:
+                print("The new coach leads the team to a successful first season! Nobody is mad at you!")
+                player_score = player_score + 100
+                department_budget = 1000000 + 1000000
+            
+            else:
+                print("The new coach struggles in their first season and everybody is mad online.")
+                player_score = player_score - 100
+                department_budget = 1000000 - 500000
+                
+        if football_choice == "3":
+            fb_success_chance = random.randint(1, 100)
+            if fb_success_chance <= 25:
+                print("The new coach leads the team to a successful first season! Nobody is mad at you!")
+                player_score = player_score + 100
+                department_budget = 1000000 + 1000000
+            else:
+                print("The new coach struggles in their first season and everybody is mad online.")
+                player_score = player_score - 100
+                department_budget = 1000000 - 500000
+             
+             
+        if football_choice == "4":
+            fb_success_chance = random.randint(1, 100)
+            if fb_success_chance <= 65:
+                print("The new coach leads the team to a successful first season! Nobody is mad at you!")
+                player_score = player_score + 100
+                department_budget = 1000000 + 1000000
+            else:
+                print("The new coach struggles in their first season and everybody is mad online.")
+                player_score = player_score - 100
+                department_budget = 1000000 - 500000
+                
+        if football_choice == "5":
+            fb_success_chance = random.randint(1, 200)
+            if fb_success_chance <= 105:
+                print("Somehow, this actually worked? You won the Alamo Bowl and everything?")
+                player_score = player_score + 300
+                department_budget = 1000000 + 2000000
+            else:
+                print("I don't see how you thought this would go any differently. You went 2-10 and your message board is learning about FOIA")
+                player_score = player_score - 200
+                department_budget = 1000000 - 700000
+        
+    elif choice == "2":
+        print("You've decided to increase funding for the women's soccer team.")
+        print("The team is now able to purchase new equipment and hire additional staff.")
+        print("The team is now more competitive than ever.")
+    elif choice == "3":
+        print("You've decided to build a new athletic facility.")
+        print("The new facility will provide much-needed space for all of the university's sports teams.")
+        print("It will also be a major recruiting tool for the school.")
+    elif choice == "4":
+        print("Thanks for playing the Mid-Major D-I University Athletic Director Game!")
+        break
+    else:
+        print("Invalid choice. Please enter a number between 1 and 4.")
