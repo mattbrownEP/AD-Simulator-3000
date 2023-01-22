@@ -50,35 +50,35 @@ while True:
             if fb_success_chance <= 60:
                 print("The new coach leads the team to a successful first season! Nobody is mad at you!")
                 player_score = player_score + 100
-                department_budget = 1000000 + 1000000
+                department_budget = department_budget + 1000000
             
             else:
                 print("The new coach struggles in their first season and everybody is mad online.")
                 player_score = player_score - 100
-                department_budget = 1000000 - 500000
+                department_budget = department_budget  - 500000
                 
         if football_choice == "2":
             fb_success_chance = random.randint(1, 100)
             if fb_success_chance <= 50:
                 print("The new coach leads the team to a successful first season! Nobody is mad at you!")
                 player_score = player_score + 100
-                department_budget = 1000000 + 1000000
+                department_budget = department_budget  + 1000000
             
             else:
                 print("The new coach struggles in their first season and everybody is mad online.")
                 player_score = player_score - 100
-                department_budget = 1000000 - 500000
+                department_budget = department_budget  - 500000
                 
         if football_choice == "3":
             fb_success_chance = random.randint(1, 100)
             if fb_success_chance <= 25:
                 print("The new coach leads the team to a successful first season! Nobody is mad at you!")
                 player_score = player_score + 100
-                department_budget = 1000000 + 1000000
+                department_budget = department_budget  + 1000000
             else:
                 print("The new coach struggles in their first season and everybody is mad online.")
                 player_score = player_score - 100
-                department_budget = 1000000 - 500000
+                department_budget = department_budget  - 500000
              
              
         if football_choice == "4":
@@ -86,22 +86,22 @@ while True:
             if fb_success_chance <= 65:
                 print("The new coach leads the team to a successful first season! Nobody is mad at you!")
                 player_score = player_score + 100
-                department_budget = 1000000 + 1000000
+                department_budget = department_budget  + 1000000
             else:
                 print("The new coach struggles in their first season and everybody is mad online.")
                 player_score = player_score - 100
-                department_budget = 1000000 - 500000
+                department_budget = department_budget  - 500000
                 
         if football_choice == "5":
             fb_success_chance = random.randint(1, 200)
             if fb_success_chance <= 105:
                 print("Somehow, this actually worked? You won the Alamo Bowl and everything?")
                 player_score = player_score + 300
-                department_budget = 1000000 + 2000000
+                department_budget = department_budget  + 2000000
             else:
                 print("I don't see how you thought this would go any differently. You went 2-10 and your message board is learning about FOIA")
                 player_score = player_score - 200
-                department_budget = 1000000 - 700000
+                department_budget = department_budget  - 700000
         
     elif choice == "2":
         print("You've decided to increase funding for the women's soccer team.")
