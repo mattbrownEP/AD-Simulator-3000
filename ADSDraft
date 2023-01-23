@@ -15,7 +15,7 @@ while True:
     # Display scores
     print("your current score is")
     print(player_score)
-    print("And your currenet departmenet budget is")
+    print("And your current departmenet budget is")
     print(department_budget)
     # Present player with options
     print("What would you like to do next?")
