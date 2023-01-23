@@ -1,12 +1,10 @@
 import random
 
 # Introduction
-print("Welcome to Athletic Director Simulator 3000")
-print("Brought to you by Extra Points, a pretty decent college sports newsletter.")
-print(" ")
-
-print("In this game, you are the AD of a mid-major university.")
-print("Your goal is to raise money, stay out of NCAA jail, and try to improve your department as best you can.")
+print('''Welcome to Athletic Director Simulator 3000\n
+Brought to you by Extra Points, a pretty decent college sports newsletter.\n
+In this game, you are the AD of a mid-major university.\n
+Your goal is to raise money, stay out of NCAA jail, and try to improve your department as best you can.\n\n\n''')
 
 # Define variables for scoring and budget
 player_score = 0
@@ -17,7 +15,7 @@ while True:
     # Display scores
     print("your current score is")
     print(player_score)
-    print("And your currenet departmenet budget is")
+    print("And your current departmenet budget is")
     print(department_budget)
     # Present player with options
     print("What would you like to do next?")
