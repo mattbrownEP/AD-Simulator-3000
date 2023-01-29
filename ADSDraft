@@ -1,118 +1,266 @@
 import random
 
-# Introduction
-print("Welcome to Athletic Director Simulator 3000")
-print("Brought to you by Extra Points, a pretty decent college sports newsletter.")
-print(" ")
-
-print("In this game, you are the AD of a mid-major university.")
-print("Your goal is to raise money, stay out of NCAA jail, and try to improve your department as best you can.")
-
-# Define variables for scoring and budget
-player_score = 0
 department_budget = 1000000
 
-# Main game loop
-while True:
-    # Display scores
-    print("your current score is")
-    print(player_score)
-    print("And your currenet departmenet budget is")
-    print(department_budget)
-    # Present player with options
-    print("What would you like to do next?")
-    print("1. Hire a new head coach for the football team")
-    print("2. Increase funding for the women's soccer team")
-    print("3. Build a new athletic facility")
-    print("4. Call donors to fundraise")
-    print("5. Buy an institutional subscription to Extra Points")
-    print("6. Set up an NIL collective")
-    print("7. Enjoy a tasty cheeseburger.")
-    print("8. Call your assistant football coach to see if his pet monkey bit any children")
-    
-    # Get player's choice
-    choice = input("Enter your choice (1-8): ")
+# Introduction
+print("Welcome to Athletic Director Simulator 3000")
+print("Brought to you by Extra Points, a decent newsletter.")
+print("In this game, you are the AD of a D-I university.")
+print("Your goal is to raise money, stay out of NCAA jail, and try to improve your department as best you can.")
+print("Try to finish with the largest budget possible by the end of the game.")
 
-    # Take action based on player's choice
-    if choice == "1":
-        print("You've decided to hire a new head coach for the football team.")
-        print("How will you decide who to hire?")
-        print("1. Hire a young, up and coming, offensive-minded assistant")
-        print("2. Hire the safest, most-experienced re-tread you can find.")
-        print("3. Hire whoever my biggest booster says I should hire.")
-        print("4. Hire whoever my search firm says I should hire.")
-        print("5. Hire Houston Nutt.")
-        
-        football_choice = input("Enter your choice (1-5): ")
-        
-        if football_choice == "1":
-            fb_success_chance = random.randint(1, 100)
-            if fb_success_chance <= 60:
-                print("The new coach leads the team to a successful first season! Nobody is mad at you!")
-                player_score = player_score + 100
-                department_budget = department_budget + 1000000
-            
-            else:
-                print("The new coach struggles in their first season and everybody is mad online.")
-                player_score = player_score - 100
-                department_budget = department_budget  - 500000
-                
-        if football_choice == "2":
-            fb_success_chance = random.randint(1, 100)
-            if fb_success_chance <= 50:
-                print("The new coach leads the team to a successful first season! Nobody is mad at you!")
-                player_score = player_score + 100
-                department_budget = department_budget  + 1000000
-            
-            else:
-                print("The new coach struggles in their first season and everybody is mad online.")
-                player_score = player_score - 100
-                department_budget = department_budget  - 500000
-                
-        if football_choice == "3":
-            fb_success_chance = random.randint(1, 100)
-            if fb_success_chance <= 25:
-                print("The new coach leads the team to a successful first season! Nobody is mad at you!")
-                player_score = player_score + 100
-                department_budget = department_budget  + 1000000
-            else:
-                print("The new coach struggles in their first season and everybody is mad online.")
-                player_score = player_score - 100
-                department_budget = department_budget  - 500000
-             
-             
-        if football_choice == "4":
-            fb_success_chance = random.randint(1, 100)
-            if fb_success_chance <= 65:
-                print("The new coach leads the team to a successful first season! Nobody is mad at you!")
-                player_score = player_score + 100
-                department_budget = department_budget  + 1000000
-            else:
-                print("The new coach struggles in their first season and everybody is mad online.")
-                player_score = player_score - 100
-                department_budget = department_budget  - 500000
-                
-        if football_choice == "5":
-            fb_success_chance = random.randint(1, 200)
-            if fb_success_chance <= 105:
-                print("Somehow, this actually worked? You won the Alamo Bowl and everything?")
-                player_score = player_score + 300
-                department_budget = department_budget  + 2000000
-            else:
-                print("I don't see how you thought this would go any differently. You went 2-10 and your message board is learning about FOIA")
-                player_score = player_score - 200
-                department_budget = department_budget  - 700000
-        
-    elif choice == "2":
-        print("You've decided to increase funding for the women's soccer team.")
-        print("The team is now able to purchase new equipment and hire additional staff.")
-        print("The team is now more competitive than ever.")
-    elif choice == "3":
-        print("You've decided to build a new athletic facility.")
-        print("The new facility will provide much-needed space for all of the university's sports teams.")
-        print("It will also be a major recruiting tool for the school.")
-    elif choice == "4":
-        print("Thanks for playing the Mid-Major D-I University Athletic Director Game!")
+print("Choose your next move:")
+
+# Game Loop
+choices_made = set()
+while True:
+    if len(choices_made) == 5:
+        print("Thank you for playing Athletic Director Simulator 3000. Your score is", department_budget, "Feel free to refresh and try to beat your score!")
         break
-    else:
-        print("Invalid choice. Please enter a number between 1 and 4.")
+    
+    print("your current athletic department budget is")
+    print(department_budget)
+    print("What would you like to do?")
+    print("1. Hire a new Football Coach")
+    print("2. Start up an NIL collective")
+    print("3. Start a New Sports Program")
+    print("4. Purchase an institutional subscription to Extra Points")
+    print("5. Sign a new apparel contract")
+    
+    # Get player choice
+    choice = int(input("Enter the number of your choice: "))
+    
+    if choice in choices_made:
+        print("You have already made this choice. Please make a different one.")
+        continue
+    
+    choices_made.add(choice)
+    
+    # Check if choice is valid
+    if choice < 1 or choice > 5:
+        print("Invalid choice, please try again")
+        continue
+        
+    # NCAA Investigation
+    if random.random() < 0.01:
+        print("Sadly, this decision triggered an NCAA Investigation, and now you are fired for cause. Womp womp.")
+        break
+
+
+
+
+    # Hiring a new Football Coach
+    if choice == 1:
+        print("You have decided to hire a new Football Coach. Here are your options:")
+        print("1. Hire a well-known, successful coach from the FCS")
+        print("2. Hire an up-and-coming assistant coach with potential")
+        print("3. Hire the biggest name you can find")
+        print("4. Hire whoever your boosters tell you to hire")
+        print("5. Hire Houston Nutt")
+        
+        sub_choice = int(input("Enter the number of your sub-choice: "))
+        
+        if sub_choice == 1:
+            if random.random() < 0.7:
+                print("The well-known, successful coach leads the football team to a winning season and increased revenue for the athletic department.")
+                department_budget = department_budget * 2
+            else:
+                print("The well-known, successful coach was unable to turn the football team's fortunes around, and revenues for the athletic department suffered.")
+                department_budget = department_budget * .75
+        elif sub_choice == 2:
+            if random.random() < 0.6:
+                print("The up-and-coming coach exceeded expectations and led the football team to a winning season and increased revenue for the athletic department.")
+                department_budget = department_budget * 2
+            else:
+                print("The up-and-coming coach was unable to meet expectations, and the football team struggled on the field and at the box office.")
+                department_budget = department_budget * .75
+        elif sub_choice == 3:
+            if random.random() < 0.7:
+                print("Your hubris worked, and the guy you just poached went and turned the football team into a contender, which increased revenue for the athletic department.")
+                department_budget = department_budget * 2
+            else:
+                print("The huge name was unable to replicate the success he had at his previous Power 5 program, and the football team struggled on and off the field. The message boards are furious")
+                department_budget = department_budget * .65
+        elif sub_choice == 4:
+            if random.random() < 0.4:
+                print("Somehow, the boosters picked the right guy. Their hire has brought energy and success to the football team, and revenue for the athletic department increased.")
+                department_budget = department_budget * 2.3
+            else:
+                print("The boosters apparently made a terrible choice, but it's not like they're going to take responsibility for it. Donations are going to dry up in the short term")
+                department_budget = department_budget * .4
+        elif sub_choice == 5:
+            if random.random() < 0.2:
+                print("For reasons known only to God, this plan somehow worked. The circle of trust has been expanded, and ticket sales are booming.")
+                department_budget = department_budget * 2.7
+            else:
+                print("The team went 3-9 and your biggest message board is learning how to FOIA. How did you think this was gonna go?")
+                department_budget = department_budget * .4
+
+    # Setting up a collective
+    if choice == 2:
+        print("You have decided to finally set up an NIL collective. Here are some of your options:")
+        print("1. Hire a professional NIL collective agency to operate your collective.")
+        print("2. Ask your single biggest booster to set up a collective.")
+        print("3. Ask your largest message board to set up a collective.")
+        print("4. Ask your overworked development staff to run the collective.")
+        print("5. Hire Houston Nutt")
+        sub_choice = int(input("Enter the number of your sub-choice: "))
+        
+        if sub_choice == 1:
+            if random.random() < 0.7:
+                print("The serious professionals manage the collective in a serious professional manner, and produce serious professional returns.")
+                department_budget = department_budget + 100000
+            else:
+                print("For some reason, your donors and community members didn't want competence. They wanted somebody flashy to drop bags. Donations have now slowed.")
+                department_budget = department_budget - 50000
+        elif sub_choice == 2:
+            if random.random() < 0.5:
+                print("Your biggest booster knew how to get others to open their wallets, and donations across the board increase.")
+                department_budget = department_budget + 100000
+            else:
+                print("It turns out that selling Kias and running a university developmenent system are two different skillsets...and your booster was way better at selling Kias.")
+                department_budget = department_budget * .70
+        elif sub_choice == 3:
+            if random.random() < 0.4:
+                print("Who better to run a bagman operation than bagmen, right? Your 247 Message Board apparently knew how to raise big bucks.")
+                department_budget = department_budget * 1.25
+            else:
+                print("Had you spent more than 10 minutes reading that message board, you probably would have known this would be a bad idea.")
+                department_budget = department_budget * .65
+        elif sub_choice == 4:
+            if random.random() < 0.8:
+                print("Somehow, your staffers didn't quit en masse with the extra work. They weren't able to raise a ton of money, but at least nobody got arrested.")
+                department_budget = department_budget + 50000
+            else:
+                print("As if these poor bastards didn't already have enough work to do. Not only did they not raise more NIL money, but donations in general have now slowed down.")
+                department_budget = department_budget - 50000
+        elif sub_choice == 5:
+            if random.random() < 0.2:
+                print("For reasons known only to God, this plan somehow worked. The circle of trust has been expanded, and your coffers are bursting with new money.")
+                department_budget = department_budget * 2.4
+            else:
+                print("Everything was going great until Nutt tried to interview for a job in the middle of his pitch to your boosters.")
+                department_budget = department_budget * .5
+
+    if choice == 3:  
+        print("It's time to add a new varsity sport to your department. Which one do you add?")
+        print("1. Start a beach volleyball team")
+        print("2. Start an esports team")
+        print("3. Start men's and women's hockey teams")
+        print("4. Start an Ultimate team")
+        print("5. Start pickleball teams")
+                
+        sub_choice = int(input("Enter the number of your sub-choice: "))
+                
+        if sub_choice == 1:
+            if random.random() < 0.75:
+                    print("The team has a great first season, brings the department into Title IX compliance, and improves student recruiting. Nice work.")
+                    department_budget = department_budget + 100000
+            else:
+                    print("Turns out, starting a beach volleyball program at a campus without a beach wasn't a great decision. The team is in the red after having to triple their recruiting budget.")
+                    department_budget = department_budget - 40000
+        elif sub_choice == 2:
+                if random.random() < 0.6:
+                    print("You add dozens of new, tuition-paying students to the school, and somehow managed to win the international Minesweeper tournament in year one. You're blowing up on Twitch right now.")
+                    department_budget = department_budget * 1.3
+                else:
+                    print("Nobody in the department has played a computer game released after Myst, so nobody had any idea what they were doing.")
+                    department_budget = department_budget * .70
+        elif sub_choice == 3:
+                if random.random() < 0.5:
+                    print("It was expensive, but your fans love it, and now you're selling 7,000+ tickets a night. Who knew so many people wanted to watch your team beat RIT?")
+                    department_budget = department_budget * 1.75
+                else:
+                    print("Maybe this ends up as a positive move in the future, but right now, you have an expensive new arena, a .300 team, and lots of empty seats.")
+                    department_budget = department_budget * .65
+        elif sub_choice == 4:
+                if random.random() < 0.8:
+                    print("Pretty safe move, right? You add a few new tuition-paying students to the campus, and you only had to spend like, 30 bucks on equipment.")
+                    department_budget = department_budget + 60000
+                else:
+                    print("Apparently, if an athlete tears his ACL because he insisted on competing without shoes, it does a number on your insurance premiums.")
+                    department_budget = department_budget - 75000
+        elif sub_choice == 5:
+                if random.random() < 0.2:
+                    print("No, I refuse to pretend this is a real sport. I am docking your score.")
+                    department_budget = department_budget * .9
+                else:
+                    print("No, I refuse to believe this is a real sport. I am docking your score.")
+                    department_budget = department_budget * .9
+                        
+             # Paying for Extra Points
+    if choice == 4:
+        print("Excellent decision. You're thinking about buying some subscriptions to Extra Points. But which one to buy?")
+        print("1. Purchase a single subscription for 75$ a year.")
+        print("2. Purchase an institutional subscription for $500 a year.")
+        print("3. Purchase Extra Points for every single person in your department, university, and even the local community.")
+            
+        sub_choice = int(input("Enter the number of your sub-choice: "))           
+        if sub_choice == 1:
+            print("A wise decision, one that leads to a modest improvement in athletic department performance.")
+            department_budget = department_budget + 100000
+                        
+        elif sub_choice == 2:
+            print("An outstanding choice. Department revenue rapidly grows, and you're suddenly getting written about as a potential candidate to become Big Ten Commissioner.")
+            department_budget = department_budget * 1.7
+
+        elif sub_choice == 3:
+            print("You are truly a visionary. As a result of this choice, you are growing professionally, socially, spirtually and even romantically in ways you never thought possible.")
+            department_budget = department_budget * 5
+
+            # Signing a new shoe deal
+    if choice == 5:  
+        print("It's time to sign a new athletic apparel contract. Who do you sign with?")
+        print("1. Nike")
+        print("2. Adidas")
+        print("3. Under Armour")
+        print("4. New Balance")
+        print("5. Russell athletic")     
+        sub_choice = int(input("Enter the number of your sub-choice: "))
+        if sub_choice == 1:
+            if random.random() < 0.85:
+                print("Nobody ever gets fired for doing a deal with Nike. Your coaches like it, the recruits like it, and nobody yells at you.")
+                department_budget = department_budget + 100000
+                        
+            else:
+                print("Being one of roughly one billion clients means that you don't get the customer service you were hoping for.")
+                department_budget = department_budget - 40000
+                        
+        elif sub_choice == 2:
+            if random.random() < 0.6:
+                print("Your uniforms look great, and uh, right AAU people are happy, which means your coaches are happy")
+                department_budget = department_budget + 100000
+            else:
+                print("The deal looked great on paper, but then the company had to revist terms once they realized they've overexposed to Kayne-related risk.")
+                department_budget = department_budget * .75
+        elif sub_choice == 3:
+            if random.random() < 0.5:
+                print("Eager to win back some positive PR, UA gives you a very favorable deal and excellent customer service")
+                department_budget = department_budget * 1.30
+            else:
+                print("Did you miss that whole news story about UCLA? Or Cal?")
+                department_budget = department_budget * .65
+        elif sub_choice == 4:
+            if random.random() < 0.5:
+                print("Are these shoes for dads and cross country runners? Yes. But you know knows a lot about responsible financial governance? Dads.")
+                department_budget = department_budget * 2
+            else:
+                print("Your cross country team loves it. Everybody else complains they're dad shoes.")
+                department_budget = department_budget - 45000
+        elif sub_choice == 5:
+            if random.random() < 0.3:
+                print("It turns out, everybody just agreed to forget about the last time these guys were involved in college sports, and now your stuff has become retro cool.")
+                department_budget = department_budget * 1.4
+            else:
+                print("Google Georgia Tech")
+                department_budget = department_budget * .7    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
