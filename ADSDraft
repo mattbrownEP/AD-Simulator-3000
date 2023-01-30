@@ -4,6 +4,7 @@ department_budget = 1000000
 
 # Introduction
 print("Welcome to Athletic Director Simulator 3000")
+print("version 1.0")
 print("Brought to you by Extra Points, a decent newsletter.")
 print("In this game, you are the AD of a D-I university.")
 print("Your goal is to raise money, stay out of NCAA jail, and try to improve your department as best you can.")
